@@ -1,5 +1,5 @@
 # Use Windows Nano Server as the base image
-FROM mcr.microsoft.com/windows/nanoserver:latest
+FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
 
 # Install IIS and PHP
 USER ContainerAdministrator

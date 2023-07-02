@@ -20,8 +20,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and push
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: lextudio/windows-nano-php:latest
+      run: |
+        docker build -t lextudio/windows-nano-php:latest .
+        docker push lextudio/windows-nano-php:latest

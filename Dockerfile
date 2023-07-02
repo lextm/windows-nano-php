@@ -25,13 +25,13 @@ RUN powershell -Command \
 EXPOSE 80
 
 # Optional: Set a healthcheck
-HEALTHCHECK --interval=5s `
- CMD powershell -command `
-    try { `
-     $response = iwr http://localhost -UseBasicParsing; `
-     if ($response.StatusCode -eq 200) { return 0} `
-     else {return 1}; `
-    } catch { return 1 }
+#HEALTHCHECK --interval=5s `
+# CMD powershell -command `
+#    try { `
+#     $response = iwr http://localhost -UseBasicParsing; `
+#     if ($response.StatusCode -eq 200) { return 0} `
+#     else {return 1}; `
+#    } catch { return 1 }
 
 # Optional: Set the default shell to PowerShell
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
